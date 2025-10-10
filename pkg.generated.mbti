@@ -1,0 +1,54 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "illusory0x0/case_conv"
+
+// Values
+
+// Errors
+
+// Types and methods
+pub(all) enum CaseStyle {
+  UpperCamel
+  LowerCamel
+  Snake
+  Kebab
+  ShoutySnake
+  Sentence
+  Title
+  ShoutyKebab
+}
+impl Compare for CaseStyle
+impl Eq for CaseStyle
+impl Hash for CaseStyle
+impl Show for CaseStyle
+impl ToJson for CaseStyle
+
+pub(all) struct Words(FixedArray[String])
+fn Words::from_kebab(String) -> Self
+fn Words::from_lower_camel(String) -> Self
+fn Words::from_sentence(String) -> Self
+fn Words::from_shouty_kebab(String) -> Self
+fn Words::from_shouty_snake(String) -> Self
+fn Words::from_snake(String) -> Self
+fn Words::from_title(String) -> Self
+fn Words::from_upper_camel(String) -> Self
+#deprecated
+fn Words::inner(Self) -> FixedArray[String]
+fn Words::into(Self, CaseStyle) -> String
+fn Words::into_kebab(Self) -> String
+fn Words::into_lower_camel(Self) -> String
+fn Words::into_sentence(Self) -> String
+fn Words::into_shouty_kebab(Self) -> String
+fn Words::into_shouty_snake(Self) -> String
+fn Words::into_snake(Self) -> String
+fn Words::into_title(Self) -> String
+fn Words::into_upper_camel(Self) -> String
+impl Compare for Words
+impl Eq for Words
+impl Hash for Words
+impl Show for Words
+impl ToJson for Words
+
+// Type aliases
+
+// Traits
+

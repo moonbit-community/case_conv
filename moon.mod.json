@@ -1,9 +1,20 @@
 {
-  "name": "username/hello",
+  "name": "illusory0x0/case_conv",
   "version": "0.1.0",
   "readme": "README.md",
-  "repository": "",
+  "repository": "https://github.com/illusory0x0/illu-case_conv",
   "license": "Apache-2.0",
-  "keywords": [],
-  "description": ""
+  "keywords": [
+    "case-conversion",
+    "string-manipulation",
+    "camelcase",
+    "snake-case",
+    "kebab-case",
+    "pascalcase",
+    "text-processing",
+    "string-utils",
+    "naming-convention",
+    "utilities"
+  ],
+  "description": "A comprehensive MoonBit library for converting between different case styles including camelCase, snake_case, kebab-case, PascalCase, SHOUTY_SNAKE_CASE, Title Case, and more. Features bidirectional conversion, type-safe enums, and zero dependencies."
 }
