@@ -42,7 +42,7 @@ pub fn Words::from_snake(input : String) -> Words {
   let parts = input.split("_")
   let words : Array[String] = []
   for part in parts {
-    let part_str = part.to_string()
+    let part_str = part.to_owned()
     if part_str.length() > 0 {
       words.push(part_str.to_lower())
     }
@@ -60,7 +60,7 @@ pub fn Words::from_kebab(input : String) -> Words {
   let parts = input.split("-")
   let words : Array[String] = []
   for part in parts {
-    let part_str = part.to_string()
+    let part_str = part.to_owned()
     if part_str.length() > 0 {
       words.push(part_str.to_lower())
     }
@@ -86,7 +86,7 @@ pub fn Words::from_sentence(input : String) -> Words {
   let parts = input.split(" ")
   let words : Array[String] = []
   for part in parts {
-    let part_str = part.to_string()
+    let part_str = part.to_owned()
     if part_str.length() > 0 {
       words.push(part_str.to_lower())
     }
