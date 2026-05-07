@@ -1,6 +1,10 @@
 // Generated using `moon info`, DON'T EDIT IT
 package "illusory0x0/case_conv"
 
+import {
+  "moonbitlang/core/debug",
+}
+
 // Values
 
 // Errors
@@ -15,38 +19,28 @@ pub(all) enum CaseStyle {
   Sentence
   Title
   ShoutyKebab
-}
-impl Compare for CaseStyle
-impl Eq for CaseStyle
-impl Hash for CaseStyle
-impl Show for CaseStyle
-impl ToJson for CaseStyle
+} derive(Compare, Eq, Hash, ToJson, @debug.Debug)
+pub impl Show for CaseStyle
 
-pub(all) struct Words(FixedArray[String])
-fn Words::from_kebab(String) -> Self
-fn Words::from_lower_camel(String) -> Self
-fn Words::from_sentence(String) -> Self
-fn Words::from_shouty_kebab(String) -> Self
-fn Words::from_shouty_snake(String) -> Self
-fn Words::from_snake(String) -> Self
-fn Words::from_title(String) -> Self
-fn Words::from_upper_camel(String) -> Self
-#deprecated
-fn Words::inner(Self) -> FixedArray[String]
-fn Words::into(Self, CaseStyle) -> String
-fn Words::into_kebab(Self) -> String
-fn Words::into_lower_camel(Self) -> String
-fn Words::into_sentence(Self) -> String
-fn Words::into_shouty_kebab(Self) -> String
-fn Words::into_shouty_snake(Self) -> String
-fn Words::into_snake(Self) -> String
-fn Words::into_title(Self) -> String
-fn Words::into_upper_camel(Self) -> String
-impl Compare for Words
-impl Eq for Words
-impl Hash for Words
-impl Show for Words
-impl ToJson for Words
+pub(all) struct Words(FixedArray[String]) derive(Compare, Eq, Hash, ToJson, @debug.Debug)
+pub fn Words::from_kebab(String) -> Self
+pub fn Words::from_lower_camel(String) -> Self
+pub fn Words::from_sentence(String) -> Self
+pub fn Words::from_shouty_kebab(String) -> Self
+pub fn Words::from_shouty_snake(String) -> Self
+pub fn Words::from_snake(String) -> Self
+pub fn Words::from_title(String) -> Self
+pub fn Words::from_upper_camel(String) -> Self
+pub fn Words::into(Self, CaseStyle) -> String
+pub fn Words::into_kebab(Self) -> String
+pub fn Words::into_lower_camel(Self) -> String
+pub fn Words::into_sentence(Self) -> String
+pub fn Words::into_shouty_kebab(Self) -> String
+pub fn Words::into_shouty_snake(Self) -> String
+pub fn Words::into_snake(Self) -> String
+pub fn Words::into_title(Self) -> String
+pub fn Words::into_upper_camel(Self) -> String
+pub impl Show for Words
 
 // Type aliases
 

@@ -3,7 +3,21 @@
 /// all word should be in lower case
 /// e.g. ["hello", "world"]
 ///
-pub(all) struct Words(FixedArray[String]) derive(Show, ToJson, Eq, Compare, Hash)
+pub(all) struct Words(FixedArray[String]) derive (
+  Debug,
+  ToJson,
+  Eq,
+  Compare,
+  Hash,
+)
+
+///|
+pub impl Show for Words with output(self, logger) {
+  let Words(words) = self
+  logger.write_string("Words(")
+  words.output(logger)
+  logger.write_string(")")
+}
 
 ///|
 ///
@@ -31,4 +45,18 @@ pub(all) enum CaseStyle {
   Title
   /// SHOUTY-KEBAB-CASE
   ShoutyKebab
-} derive(Show, ToJson, Eq, Compare, Hash)
+} derive(Debug, ToJson, Eq, Compare, Hash)
+
+///|
+pub impl Show for CaseStyle with output(self, logger) {
+  match self {
+    UpperCamel => logger.write_string("UpperCamel")
+    LowerCamel => logger.write_string("LowerCamel")
+    Snake => logger.write_string("Snake")
+    Kebab => logger.write_string("Kebab")
+    ShoutySnake => logger.write_string("ShoutySnake")
+    Sentence => logger.write_string("Sentence")
+    Title => logger.write_string("Title")
+    ShoutyKebab => logger.write_string("ShoutyKebab")
+  }
+}
