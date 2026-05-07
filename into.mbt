@@ -14,12 +14,8 @@ pub fn Words::into_upper_camel(self : Words) -> String {
             first_char
           }
           sb.write_char(capitalized_first)
-          if word.length() > 1 {
-            let rest_result = try? word[1:]
-            match rest_result {
-              Ok(rest) => sb.write_string(rest.to_string())
-              Err(_) => () // Ignore slice errors
-            }
+          if word is [_, .. rest_word] && !rest_word.is_empty() {
+            sb.write_string(rest_word.to_owned())
           }
         }
         None => () // Skip empty words
@@ -50,12 +46,8 @@ pub fn Words::into_lower_camel(self : Words) -> String {
               first_char
             }
             sb.write_char(capitalized_first)
-            if word.length() > 1 {
-              let rest_result = try? word[1:]
-              match rest_result {
-                Ok(rest) => sb.write_string(rest.to_string())
-                Err(_) => () // Ignore slice errors
-              }
+            if word is [_, .. rest_word] && !rest_word.is_empty() {
+              sb.write_string(rest_word.to_owned())
             }
           }
           None => () // Skip empty words
@@ -75,7 +67,7 @@ pub fn Words::into_snake(self : Words) -> String {
   let mut first = true
   for word in words {
     if word.length() > 0 {
-      if not(first) {
+      if !first {
         sb.write_char('_')
       }
       sb.write_string(word)
@@ -94,7 +86,7 @@ pub fn Words::into_kebab(self : Words) -> String {
   let mut first = true
   for word in words {
     if word.length() > 0 {
-      if not(first) {
+      if !first {
         sb.write_char('-')
       }
       sb.write_string(word)
@@ -113,7 +105,7 @@ pub fn Words::into_shouty_snake(self : Words) -> String {
   let mut first = true
   for word in words {
     if word.length() > 0 {
-      if not(first) {
+      if !first {
         sb.write_char('_')
       }
       sb.write_string(word.to_upper())
@@ -133,7 +125,7 @@ pub fn Words::into_sentence(self : Words) -> String {
   let mut first = true
   for word in words {
     if word.length() > 0 {
-      if not(first) {
+      if !first {
         sb.write_char(' ')
       }
       if is_first_word {
@@ -146,12 +138,8 @@ pub fn Words::into_sentence(self : Words) -> String {
               first_char
             }
             sb.write_char(capitalized_first)
-            if word.length() > 1 {
-              let rest_result = try? word[1:]
-              match rest_result {
-                Ok(rest) => sb.write_string(rest.to_string())
-                Err(_) => () // Ignore slice errors
-              }
+            if word is [_, .. rest_word] && !rest_word.is_empty() {
+              sb.write_string(rest_word.to_owned())
             }
           }
           None => () // Skip empty words
@@ -176,7 +164,7 @@ pub fn Words::into_title(self : Words) -> String {
   let mut first = true
   for word in words {
     if word.length() > 0 {
-      if not(first) {
+      if !first {
         sb.write_char(' ')
       }
       match word.get_char(0) {
@@ -187,12 +175,8 @@ pub fn Words::into_title(self : Words) -> String {
             first_char
           }
           sb.write_char(capitalized_first)
-          if word.length() > 1 {
-            let rest_result = try? word[1:]
-            match rest_result {
-              Ok(rest) => sb.write_string(rest.to_string())
-              Err(_) => () // Ignore slice errors
-            }
+          if word is [_, .. rest_word] && !rest_word.is_empty() {
+            sb.write_string(rest_word.to_owned())
           }
         }
         None => () // Skip empty words
@@ -212,7 +196,7 @@ pub fn Words::into_shouty_kebab(self : Words) -> String {
   let mut first = true
   for word in words {
     if word.length() > 0 {
-      if not(first) {
+      if !first {
         sb.write_char('-')
       }
       sb.write_string(word.to_upper())
