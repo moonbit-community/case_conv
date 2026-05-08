@@ -27,7 +27,7 @@ A comprehensive MoonBit library for converting between different case styles inc
 
 ### Basic Usage
 
-```moonbit nocheck
+```mbt check
 ///|
 test "basic conversion examples" {
   // Parse from camelCase and convert to snake_case
@@ -49,7 +49,7 @@ test "basic conversion examples" {
 
 ### Using the Generic `into` Method
 
-```moonbit nocheck
+```mbt check
 ///|
 test "generic conversion with CaseStyle enum" {
   let words = @case_conv.Words::from_lower_camel("getUserById")
@@ -68,7 +68,7 @@ test "generic conversion with CaseStyle enum" {
 
 ### From Different Case Styles
 
-```moonbit nocheck
+```mbt check
 ///|
 test "parsing from various case styles" {
   // From camelCase variations
@@ -93,7 +93,7 @@ test "parsing from various case styles" {
 
 ### Edge Cases
 
-```moonbit nocheck
+```mbt check
 ///|
 test "edge cases and special handling" {
   // Empty strings
@@ -118,7 +118,7 @@ test "edge cases and special handling" {
 
 ### Common Programming Patterns
 
-```moonbit nocheck
+```mbt check
 ///|
 test "common programming case conversions" {
   // API endpoint naming
@@ -145,7 +145,7 @@ test "common programming case conversions" {
 
 ### Configuration and Documentation
 
-```moonbit nocheck
+```mbt check
 ///|
 test "configuration and documentation examples" {
   // Configuration key transformations
