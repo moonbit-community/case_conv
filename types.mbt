@@ -14,9 +14,16 @@ pub(all) struct Words(FixedArray[String]) derive (
 ///|
 pub impl Show for Words with output(self, logger) {
   let Words(words) = self
-  logger.write_string("Words(")
-  words.output(logger)
-  logger.write_string(")")
+  logger.write_string("Words([")
+  for i in 0..<words.length() {
+    if i > 0 {
+      logger.write_string(", ")
+    }
+    logger.write_string("\"")
+    logger.write_string(words[i])
+    logger.write_string("\"")
+  }
+  logger.write_string("])")
 }
 
 ///|
