@@ -12,7 +12,7 @@ pub(all) struct Words(FixedArray[String]) derive (
 )
 
 ///|
-pub impl Show for Words with output(self, logger) {
+pub impl Show for Words with fn output(self, logger) {
   let Words(words) = self
   logger.write_string("Words([")
   for i in 0..<words.length() {
@@ -55,7 +55,7 @@ pub(all) enum CaseStyle {
 } derive(Debug, ToJson, Eq, Compare, Hash)
 
 ///|
-pub impl Show for CaseStyle with output(self, logger) {
+pub impl Show for CaseStyle with fn output(self, logger) {
   match self {
     UpperCamel => logger.write_string("UpperCamel")
     LowerCamel => logger.write_string("LowerCamel")

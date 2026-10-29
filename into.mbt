@@ -2,14 +2,14 @@
 /// Convert Words to UpperCamelCase (PascalCase) string
 /// Example: Words(["hello", "world", "test"]) -> "HelloWorldTest"
 pub fn Words::into_upper_camel(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   for word in words {
     if word.length() > 0 {
       match word.get_char(0) {
         Some(first_char) => {
           let capitalized_first = if first_char >= 'a' && first_char <= 'z' {
-            Int::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
+            Int32::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
           } else {
             first_char
           }
@@ -29,7 +29,7 @@ pub fn Words::into_upper_camel(self : Words) -> String {
 /// Convert Words to lowerCamelCase string
 /// Example: Words(["hello", "world", "test"]) -> "helloWorldTest"
 pub fn Words::into_lower_camel(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   for i, word in words.iter2() {
     if word.length() > 0 {
@@ -41,7 +41,7 @@ pub fn Words::into_lower_camel(self : Words) -> String {
         match word.get_char(0) {
           Some(first_char) => {
             let capitalized_first = if first_char >= 'a' && first_char <= 'z' {
-              Int::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
+              Int32::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
             } else {
               first_char
             }
@@ -62,7 +62,7 @@ pub fn Words::into_lower_camel(self : Words) -> String {
 /// Convert Words to snake_case string
 /// Example: Words(["hello", "world", "test"]) -> "hello_world_test"
 pub fn Words::into_snake(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   let mut first = true
   for word in words {
@@ -81,7 +81,7 @@ pub fn Words::into_snake(self : Words) -> String {
 /// Convert Words to kebab-case string
 /// Example: Words(["hello", "world", "test"]) -> "hello-world-test"
 pub fn Words::into_kebab(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   let mut first = true
   for word in words {
@@ -100,7 +100,7 @@ pub fn Words::into_kebab(self : Words) -> String {
 /// Convert Words to SHOUTY_SNAKE_CASE string
 /// Example: Words(["hello", "world", "test"]) -> "HELLO_WORLD_TEST"
 pub fn Words::into_shouty_snake(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   let mut first = true
   for word in words {
@@ -119,7 +119,7 @@ pub fn Words::into_shouty_snake(self : Words) -> String {
 /// Convert Words to sentence case string
 /// Example: Words(["hello", "world", "test"]) -> "Hello world test"
 pub fn Words::into_sentence(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   let mut is_first_word = true
   let mut first = true
@@ -133,7 +133,7 @@ pub fn Words::into_sentence(self : Words) -> String {
         match word.get_char(0) {
           Some(first_char) => {
             let capitalized_first = if first_char >= 'a' && first_char <= 'z' {
-              Int::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
+              Int32::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
             } else {
               first_char
             }
@@ -159,7 +159,7 @@ pub fn Words::into_sentence(self : Words) -> String {
 /// Convert Words to Title Case string
 /// Example: Words(["hello", "world", "test"]) -> "Hello World Test"
 pub fn Words::into_title(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   let mut first = true
   for word in words {
@@ -170,7 +170,7 @@ pub fn Words::into_title(self : Words) -> String {
       match word.get_char(0) {
         Some(first_char) => {
           let capitalized_first = if first_char >= 'a' && first_char <= 'z' {
-            Int::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
+            Int32::unsafe_to_char(first_char.to_int() - 32) // Convert to uppercase
           } else {
             first_char
           }
@@ -191,7 +191,7 @@ pub fn Words::into_title(self : Words) -> String {
 /// Convert Words to SHOUTY-KEBAB-CASE string
 /// Example: Words(["hello", "world", "test"]) -> "HELLO-WORLD-TEST"
 pub fn Words::into_shouty_kebab(self : Words) -> String {
-  let sb = StringBuilder::new()
+  let sb = StringBuilder()
   let Words(words) = self
   let mut first = true
   for word in words {

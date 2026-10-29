@@ -20,9 +20,24 @@ pub(all) enum CaseStyle {
   Title
   ShoutyKebab
 } derive(Compare, Eq, Hash, ToJson, @debug.Debug)
+pub fn CaseStyle::compare(Self, Self) -> Int32
+pub fn CaseStyle::equal(Self, Self) -> Bool
+pub fn CaseStyle::hash(Self) -> Int32
+pub fn CaseStyle::hash_combine(Self, Hasher) -> Unit
+pub fn CaseStyle::not_equal(Self, Self) -> Bool
+pub fn CaseStyle::op_ge(Self, Self) -> Bool
+pub fn CaseStyle::op_gt(Self, Self) -> Bool
+pub fn CaseStyle::op_le(Self, Self) -> Bool
+pub fn CaseStyle::op_lt(Self, Self) -> Bool
+pub fn CaseStyle::output(Self, &Logger) -> Unit
+pub fn CaseStyle::to_json(Self) -> Json
+pub fn CaseStyle::to_repr(Self) -> @debug.Repr
+pub fn CaseStyle::to_string(Self) -> String
 pub impl Show for CaseStyle
 
 pub(all) struct Words(FixedArray[String]) derive(Compare, Eq, Hash, ToJson, @debug.Debug)
+pub fn Words::compare(Self, Self) -> Int32
+pub fn Words::equal(Self, Self) -> Bool
 pub fn Words::from_kebab(String) -> Self
 pub fn Words::from_lower_camel(String) -> Self
 pub fn Words::from_sentence(String) -> Self
@@ -31,6 +46,8 @@ pub fn Words::from_shouty_snake(String) -> Self
 pub fn Words::from_snake(String) -> Self
 pub fn Words::from_title(String) -> Self
 pub fn Words::from_upper_camel(String) -> Self
+pub fn Words::hash(Self) -> Int32
+pub fn Words::hash_combine(Self, Hasher) -> Unit
 pub fn Words::into(Self, CaseStyle) -> String
 pub fn Words::into_kebab(Self) -> String
 pub fn Words::into_lower_camel(Self) -> String
@@ -40,9 +57,17 @@ pub fn Words::into_shouty_snake(Self) -> String
 pub fn Words::into_snake(Self) -> String
 pub fn Words::into_title(Self) -> String
 pub fn Words::into_upper_camel(Self) -> String
+pub fn Words::not_equal(Self, Self) -> Bool
+pub fn Words::op_ge(Self, Self) -> Bool
+pub fn Words::op_gt(Self, Self) -> Bool
+pub fn Words::op_le(Self, Self) -> Bool
+pub fn Words::op_lt(Self, Self) -> Bool
+pub fn Words::output(Self, &Logger) -> Unit
+pub fn Words::to_json(Self) -> Json
+pub fn Words::to_repr(Self) -> @debug.Repr
+pub fn Words::to_string(Self) -> String
 pub impl Show for Words
 
 // Type aliases
 
 // Traits
-
